@@ -3,22 +3,34 @@ body {
     margin: 0;
 }
 
-.navbar-logo-centered .navbar-nav .nav-link{
-    padding: .5em 1em;
-}
+
 
 
 .navbar {
     background-color: rgb(36,36,36); 
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
 }
   
 
-/* @media(max-width:992px){  
+@media(min-width:992px){  
+    #hidden-logo-large {
+        display: none;
+    }
     
     .nav-link {
-        margin-left: 1em !important;
+        margin-top: 0.8em !important;
+        margin-left: 3em !important;
+        margin-right: 3em !important;
     }
-} */
+}
+
+@media(max-width:992px){  
+    #hidden-logo-collapse {
+        display: none;
+    }
+}
 
 
 
@@ -29,6 +41,7 @@ body {
     font-family: 'Fira Sans Condensed', sans-serif;
     text-decoration: none;
     color: white;
+    white-space: pre;
     
 }
 
@@ -39,11 +52,6 @@ body {
     cursor: pointer;
 }
 
-.nav-link {
-    margin-top: 0.5em !important;
-    margin-left: 3em !important;
-    margin-right: 3em !important;
-}
 
 .nav-link:hover {
     color: rgba(209, 204, 255, 0.836);
