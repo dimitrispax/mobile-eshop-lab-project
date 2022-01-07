@@ -4,17 +4,17 @@ body {
 }
 
 .navbar {
-    background-color: rgb(36,36,36); 
+    background-color: rgb(36, 36, 36);
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 
 }
-  
-@media(min-width:992px){  
+
+@media(min-width:992px) {
     #hidden-logo-large {
         display: none;
     }
-    
+
     .nav-link {
         margin-top: 0.8em !important;
         margin-left: 3em !important;
@@ -22,21 +22,21 @@ body {
     }
 }
 
-@media(max-width:992px){  
+@media(max-width:992px) {
     #hidden-logo-collapse {
         display: none;
     }
 }
 
 .navbar a {
-    
+
     font-size: 21px;
     font-weight: 300;
     font-family: 'Fira Sans Condensed', sans-serif;
     text-decoration: none;
     color: white;
     white-space: pre;
-    
+
 }
 
 .nav-link,
@@ -63,6 +63,7 @@ body {
     background-position: center;
     position: relative;
 }
+
 .overlay {
     position: absolute;
     min-height: 100%;
@@ -71,29 +72,32 @@ body {
     top: 0;
     background: rgba(0, 0, 0, 0.6);
 }
+
 .description {
-	left: 50%;
-	position: absolute;
-	top: 45%;
-	transform: translate(-50%, -55%);
-	text-align: center;
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -55%);
+    text-align: center;
 }
+
 .description h1 {
     font-family: 'Fira Sans Condensed', sans-serif;
-	color: rgb(87,145,96);
+    color: rgb(87, 145, 96);
 }
+
 .description p {
     font-family: 'Fira Sans Condensed', sans-serif;
-	color: #fff;
-	font-size: 1.3rem;
-	line-height: 1.5;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.5;
 }
 
 .description button {
     font-size: 1.15em;
     letter-spacing: 0.05rem;
     padding: 0.68em 2.9em;
-    background-color: rgba(145,87,136,0.8);
+    background-color: rgba(145, 87, 136, 0.8);
     border-radius: 1em;
     border-style: solid;
     border-color: transparent;
@@ -101,38 +105,82 @@ body {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-  
-  
+
+
     font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: 300;
     color: white;
     text-align: center;
     text-decoration: none;
-  
-  }
-  
-  .description button:hover {
-    background-color: rgb(145,87,136);
+
+}
+
+.description button:hover {
+    background-color: rgb(145, 87, 136);
     box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
     color: #fff;
     border-style: solid;
     border-color: transparent;
     transform: translateY(7px);
-  }
-
-
-
-
-.page-footer {
-    font-size: 19px;
-    font-weight: 300;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    background-color: rgb(36,36,36); 
-    color: white;
-    padding: 60px 0 30px; 
 }
 
-.footer-copyright {
-    color: rgb(169, 145, 93);
-    padding: 40px 0; 
+
+
+footer {
+    background-color: rgb(36, 36, 36);
+}
+
+footer p {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+footer li {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+footer h5 {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+footer input {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a:hover, a:focus {
+    text-decoration: none;
+}
+
+.form-control {
+    background: #212529;
+    border-color: #545454;
+}
+
+.form-control:focus {
+    background: #212529;
 }
