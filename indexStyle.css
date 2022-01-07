@@ -2,35 +2,27 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.navbar-logo-centered .navbar-nav .nav-link{
+    padding: .5em 1em;
+}
+
+
+
+
 .navbar {
-    /* background-color: rgb(145, 87, 136); */
-    /* background-color: rgb(87, 145, 96); */
-    /* background-color: rgb(19,25,33); */
     background-color: rgb(36,36,36); 
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    /* padding-top: 0 !important;
+    padding-bottom: 0 !important; */
 }
+  
 
-@media(min-width:992px){
+/* @media(max-width:992px){  
     
-    #logo {
-        margin-left: 3vw !important;
-    }    
-    #nav-right {
-        margin-left: 3vw !important;
-    }    
-
-    .navbar-expand-lg .navbar-collapse{
-        width: 100%;
-    }
-}
-
-@media(max-width:992px){  
-    
-    /* .nav-link {
+    .nav-link {
         margin-left: 1em !important;
-    } */
-}
+    }
+} */
 
 
 
@@ -40,28 +32,18 @@ body {
     font-family: 'Fira Sans Condensed', sans-serif;
     text-decoration: none;
     color: white;
-    margin-left: 0 3vw;
-
+    
 }
+
+
 .nav-link,
 .navbar-brand {
     color: #fff;
     cursor: pointer;
 }
 
-.nav-link {
-    margin-right: 3em !important;
-}
 .nav-link:hover {
     color: rgba(209, 204, 255, 0.836);
-}
-.navbar-collapse {
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-link home{
-    margin-left: 800px !important;
 }
 
 .fa-bars {
