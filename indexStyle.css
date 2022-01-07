@@ -3,9 +3,6 @@ body {
     margin: 0;
 }
 
-
-
-
 .navbar {
     background-color: rgb(36,36,36); 
     padding-top: 0 !important;
@@ -13,7 +10,6 @@ body {
 
 }
   
-
 @media(min-width:992px){  
     #hidden-logo-large {
         display: none;
@@ -32,8 +28,6 @@ body {
     }
 }
 
-
-
 .navbar a {
     
     font-size: 21px;
@@ -45,13 +39,11 @@ body {
     
 }
 
-
 .nav-link,
 .navbar-brand {
     color: #fff;
     cursor: pointer;
 }
-
 
 .nav-link:hover {
     color: rgba(209, 204, 255, 0.836);
@@ -88,7 +80,7 @@ body {
 }
 .description h1 {
     font-family: 'Fira Sans Condensed', sans-serif;
-	color: #6ab446;
+	color: rgb(87,145,96);
 }
 .description p {
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -96,64 +88,46 @@ body {
 	font-size: 1.3rem;
 	line-height: 1.5;
 }
+
 .description button {
-    border:1px solid #6ab446;
-    background:#6ab446;
-    border-radius: 0;
-    color:#fff;
-}
-.description button:hover {
-	border:1px solid #fff;
-    background:#fff;
-    color:#000;
-}
-
-
-.features {
-	margin: 4em auto;
-	padding: 2em;
-	position: relative;
-}
-.feature-title {
-    font-weight: 300;
+    font-size: 1.15em;
+    letter-spacing: 0.05rem;
+    padding: 0.68em 2.9em;
+    background-color: rgba(145,87,136,0.8);
+    border-radius: 1em;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  
+  
     font-family: 'Fira Sans Condensed', sans-serif;
-	font-size: 1.3rem;
-    color: rgb(169, 145, 93);
-	font-weight: 500;
-	margin-bottom: 20px;
-}
-
-
-.col-lg-4 {
-    border-right: solid;
-    border-left: solid;
-    border-radius: 18px;
-    border-color: rgb(26, 72, 89);
-    border-width: 2px;
-}
-
-.col-lg-4 p {
-    font-size: 19px;
     font-weight: 300;
-    font-family: 'Fira Sans Condensed', sans-serif;
-}
-
-.col-lg-4 a {
+    color: white;
+    text-align: center;
     text-decoration: none;
-    color: black;
-}
+  
+  }
+  
+  .description button:hover {
+    background-color: rgb(145,87,136);
+    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
+    color: #fff;
+    border-style: solid;
+    border-color: transparent;
+    transform: translateY(7px);
+  }
 
-.col-lg-4 a:hover{
-    text-decoration: none;
-    color: rgb(26, 72, 89);
-}
+
 
 
 .page-footer {
     font-size: 19px;
     font-weight: 300;
     font-family: 'Fira Sans Condensed', sans-serif;
-    background-color: rgb(26, 72, 89);
+    background-color: rgb(36,36,36); 
     color: white;
     padding: 60px 0 30px; 
 }
