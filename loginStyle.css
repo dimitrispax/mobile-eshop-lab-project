@@ -72,7 +72,7 @@ body {
 
 
 .perigrafh {
-    background-color: rgb(169, 145, 93);
+    color: rgb(87, 145, 96);
     border-radius: 20px;
     border-style: solid;
     border-color: rgb(26, 72, 89);
@@ -98,10 +98,17 @@ body {
     padding-bottom: 6em;
 }
 
-.form-floating input {
-    padding-top: 1.8em;
-    padding-bottom: 1em;
 
+.form-floating input {
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    color: black;
+    background-color: rgb(238, 245, 255);
+}
+
+.form-floating input:focus {
+    color: black;
+    background-color: rgb(238, 245, 255);
 }
 
 .form-control {
@@ -109,22 +116,38 @@ body {
     border-color: rgb(26, 72, 89);
     border-width: 2px;
     font-family: 'Fira Sans Condensed', sans-serif;
-    background-color: rgba(255, 255, 255, 0.9);
 }
-
-
 
 .form-floating p {
     font-family: 'Fira Sans Condensed', sans-serif;
     text-align: center;
-    color: rgb(169, 145, 93);
+    align-items: center;
+    color: rgb(87, 145, 96);
 }
 
-.d-flex button {
+.card {
+    background-color: rgba(36, 36, 36, 0.5);
+    color: rgb(67, 235, 226);
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5%;
+}
+
+.card-body {
+    /* border-color: rgb(124, 124, 124) */
+    border-color: rgb(36, 36, 36);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5%;
+}
+
+
+.login button {
     font-size: 1.15em;
     letter-spacing: 0.05rem;
     padding: 0.68em 2.9em;
-    background-color: rgb(169, 145, 93);
+    background-color: rgba(145, 87, 136, 0.8);
     border-radius: 1em;
     border-style: solid;
     border-color: transparent;
@@ -136,15 +159,15 @@ body {
 
     font-family: 'Fira Sans Condensed', sans-serif;
     font-weight: 300;
-    color: black;
+    color: white;
     text-align: center;
     text-decoration: none;
 
 }
 
-.d-flex button:hover {
-    background-color: #2EE59D;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+.login button:hover {
+    background-color: rgb(145, 87, 136);
+    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
     color: #fff;
     border-style: solid;
     border-color: transparent;
@@ -152,52 +175,16 @@ body {
 }
 
 
-
-.extra-container {
-    border-radius: 20px;
+.login button:active {
+    background-color: rgb(145, 87, 136);
+    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
+    color: #fff;
     border-style: solid;
-    border-color: rgb(26, 72, 89);
-    border-width: 2px;
-    height: 300px;
-}
-
-.extra-container p {
-    font-size: 20px;
-    font-weight: 600;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    color: rgb(169, 145, 93);
-    text-align: center;
+    border-color: transparent;
+    transform: translateY(7px);
 }
 
 
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.buttons button {
-    background: white;
-    border-radius: 18px;
-    border-style: solid;
-    border-color: rgb(26, 72, 89);
-    width: 150px;
-    height: 50px;
-    margin-top: 1em;
-    margin-bottom: 0.6em;
-}
-
-.buttons button a {
-    padding: 0.4em 0.8em;
-    font-weight: 600;
-    color: rgb(26, 72, 89);
-    font-size: 20px;
-    text-align: center;
-    line-height: 16px;
-    text-decoration: none;
-}
 
 
 
@@ -245,7 +232,7 @@ footer input {
     font-weight: 300;
     font-family: 'Fira Sans Condensed', sans-serif;
     text-decoration: none;
-    color: inherit;
+    color: #545454;
 }
 
 footer a:hover, a:focus {
