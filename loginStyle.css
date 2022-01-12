@@ -102,13 +102,13 @@ body {
 .form-floating input {
     padding-top: 1.4em;
     padding-bottom: 1.4em;
-    color: black;
-    background-color: rgb(238, 245, 255);
+    color: white;
+    background-color: rgb(36, 36, 36);
 }
 
 .form-floating input:focus {
-    color: black;
-    background-color: rgb(238, 245, 255);
+    color: white;
+    background-color: rgb(36, 36, 36);
 }
 
 .form-control {

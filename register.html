@@ -55,25 +55,60 @@
              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                <div class="card border-0 my-2">
                  <div class="card-body p-4 p-sm-5">
-                   <form>
-                    <div class="form-row">
-                        <div class="form-floating pl-3 pb-2 pt-3">
-                           <div class="col">
-                                <p>Email</p>
-                                <input type="email"  id="eemail" class="form-control" id="floatingInput">
-                                <p id="emailMessage"></p>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputFname">First Name</label>
+                                <input type="fname" class="form-control" id="inputFname" placeholder="John">
                             </div>
-                           <div class="col">
-                                <p>Email</p>
-                                <input type="email"  id="eemail" class="form-control" id="floatingInput">
-                                <p id="emailMessage"></p>
-                           </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputLname">Last Name</label>
+                                <input type="lname" class="form-control" id="inputLname" placeholder="Doe">
+                            </div>
                         </div>
-                    </div>
-                        <div class="d-flex justify-content-center btn-sm login">
-                          <button class="btn btn-primary text-center" type="submit" onclick="return checkEmptyEi() & ValidateEmailEi()"/>Register</button>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="example@email.com">
                         </div>
-                   </form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputRePassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="inputRePassword" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Street 123">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPostal">Postal Code</label>
+                                <input type="text" class="form-control" id="inputPostal">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhone">Mobile Phone</label>
+                            <input type="tel" class="form-control" id="inputPhone" placeholder="">
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Check me out
+                                </label>
+                            </div>
+                        </div> -->
+                        <div class="d-flex justify-content-center btn-sm register">
+                            <button class="btn btn-primary text-center" type="submit" onclick="return checkEmptyEi() & ValidateEmailEi()"/>Register</button>
+                        </div>
                  </div>
              </div>
           </div>
