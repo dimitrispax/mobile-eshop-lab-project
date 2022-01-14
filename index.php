@@ -28,18 +28,18 @@
         <div class="collapse navbar-collapse navigation-menu" id="myNavbarToggler7">
           <ul class="navbar-nav mx-auto">
               <li class="nav-item mr-lg-3 order-2 order-lg-1">
-                  <a class="nav-link" href="login.html">Login</a>
+                  <a class="nav-link" href="login.php">Login</a>
               </li>
               <li class="nav-item mr-lg-5 order-3 order-lg-2">
                   <a class="nav-link" href="#">Mobile Phones</a>
               </li>
-              <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.html"><img src="images/logo.png" width=70px></a>
+              <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.php"><img src="images/logo.png" width=70px></a>
 
               <li class="nav-item ml-lg-5 order-4 order-lg-4">
                   <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item ml-lg-3 order-5 order-lg-5">
-                  <a class="nav-link" href="register.html">Register</a>
+                  <a class="nav-link" href="register.php">Register</a>
               </li>
           </ul>
         </div>
