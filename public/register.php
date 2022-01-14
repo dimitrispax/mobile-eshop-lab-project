@@ -55,7 +55,7 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card border-0 my-2">
                         <div class="card-body p-4 p-sm-5">
-                            <form action="php_files/auth.php" method="post">
+                            <form action="src/auth.php" method="post">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputFname">First Name</label>
