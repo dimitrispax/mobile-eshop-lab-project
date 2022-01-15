@@ -7,24 +7,35 @@ require __DIR__. '/../vendor/autoload.php';
 /**
 * Register a user
 *
+* @param string $first_name
+* @param string $last_name
 * @param string $email
-* @param string $username
 * @param string $password
+* @param string $address
+* @param string $city
+* @param string $postal_code
+* @param string $mobile_phone
+* @param string $activation_code
 * @param bool $is_admin
 * @return bool
 */
-function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
+function register_user(string $fname, string $lname, string $email,string $password, string $address, string $city, string $pCode, string $mPhone, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
 {
-    $sql = 'INSERT INTO users(username, email, password, is_admin, activation_code, activation_expiry)
-            VALUES(:username, :email, :password, :is_admin, :activation_code,:activation_expiry)';
+    $sql = 'INSERT INTO users(fName, lName, email, password, address, city, pCode, mPhone, is_admin, activation_code, activation_expiry)
+            VALUES(:fName, :lName, :email, :password, :address, :city, :pCode, :mPhone, :is_admin, :activation_code, :activation_expiry)';
 
     $statement = db()->prepare($sql);
 
-    $statement->bindValue(':username', $username);
+    $statement->bindValue(':fName', $fname);
+    $statement->bindValue(':lName', $lname);
     $statement->bindValue(':email', $email);
     $statement->bindValue(':password', password_hash($password, PASSWORD_BCRYPT));
+    $statement->bindValue(':address', $address);
+    $statement->bindValue(':city', $city);
+    $statement->bindValue(':pCode', $pCode);
+    $statement->bindValue(':mPhone', $mPhone);
     $statement->bindValue(':is_admin', (int)$is_admin, PDO::PARAM_INT);
-    $statement->bindValue(':activation_code', password_hash($activation_code, PASSWORD_DEFAULT));
+    $statement->bindValue(':activation_code', $activation_code);
     $statement->bindValue(':activation_expiry', date('Y-m-d H:i:s',  time() + $expiry));
 
     return $statement->execute();
@@ -74,7 +85,7 @@ function generate_activation_code(): string
 function send_activation_email(string $email, string $activation_code): void
 {
     // create the activation link
-    $activation_link = "localhost:8080/src/activate.php?email=$email&activation_code=$activation_code";
+    $activation_link = "https://localhost:8080/src/activate.php?email=$email&activation_code=$activation_code";
 
     // set email subject & body
     $message = <<<MESSAGE

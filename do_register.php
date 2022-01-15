@@ -37,7 +37,7 @@ if (is_post_request()) {
 
     $activation_code = generate_activation_code();
 // function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
-    if (register_user($_POST['inputEmail'], $_POST['inputFname'], $_POST['inputPassword'], $activation_code)) {
+    if (register_user($_POST['inputFname'], $_POST['inputLname'], $_POST['inputEmail'], $_POST['inputPassword'], $_POST['inputAddress'], $_POST['inputCity'], $_POST['inputPostal'], $_POST['inputPhone'], $activation_code)) {
 
         // send the activation email
         send_activation_email($_POST['inputEmail'], $activation_code);
