@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +33,14 @@
         <div class="collapse navbar-collapse navigation-menu" id="myNavbarToggler7">
           <ul class="navbar-nav mx-auto">
               <li class="nav-item mr-lg-3 order-2 order-lg-1">
-                  <a class="nav-link" href="login.php">Login</a>
+              <?php
+                if (!isset($_SESSION['logged'])) {
+                    echo '<a class="nav-link" href="login.php">Login</a>';
+                } else {
+                    echo '<a class="nav-link" href="do_logout.php">Logout</a>';
+                }
+                ?>
+                  
               </li>
               <li class="nav-item mr-lg-5 order-3 order-lg-2">
                   <a class="nav-link" href="#">Mobile Phones</a>
@@ -39,7 +51,13 @@
                   <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item ml-lg-3 order-5 order-lg-5">
-                  <a class="nav-link" href="register.php">Register</a>
+              <?php
+                if (!isset($_SESSION['logged'])) {
+                    echo '<a class="nav-link" href="register.php">Register</a>';
+                } else {
+                    echo '<a class="nav-link" href="#">My Orders</a>';
+                }
+                ?>
               </li>
           </ul>
         </div>

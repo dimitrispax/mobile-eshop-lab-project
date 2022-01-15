@@ -50,6 +50,7 @@
     <!-- HEADER -->
     <header class="page-header header container-fluid">
       <div class="overlay"></div>
+      <form action="do_login.php" method="post">
       <div class="container form">
         <div class="row">
           <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -58,22 +59,25 @@
                 <form>
                   <div class="form-floating pl-3 pb-2 pt-3">
                     <p>Email</p>
-                    <input type="email"  id="eemail" class="form-control" id="floatingInput">
+                    <input type="email"  id="email" name='email' class="form-control" id="floatingInput">
                     <p id="emailMessage" ></p>
                   </div>
                   <div class="form-floating pl-3 pb-2 pt-3 mb-5">
                     <p>Password</p>
-                    <input type="password" id="pswd" class="form-control" id="floatingPassword">
+                    <input type="password" id="pwd" name='pwd' class="form-control" id="floatingPassword">
                     <p id="pwdMessage" ></p> 
                   </div>
     
                   <div class="d-flex justify-content-center btn-sm login">
-                    <button class="btn btn-primary text-center" type="submit" onclick="return checkEmptyEi() & ValidateEmailEi()"/>Login</button>
+                    <button class="btn btn-primary text-center" type="submit"/>Login</button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      </form>
     </header>
 
 
