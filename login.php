@@ -12,11 +12,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="indexStyle.css">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/loginStyle.css">
 </head>
 
 <body>
+
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" id="hidden-logo-large" href="#"><img src="images/logo.png" width=70px></a>
@@ -44,21 +45,37 @@
           </ul>
         </div>
     </nav>
-  
-  <!-- HEADER -->
+
+
+    <!-- HEADER -->
     <header class="page-header header container-fluid">
       <div class="overlay"></div>
-      <div class="description">
-        <h1>Welcome to Pax & Krem Mobile Store</h1>
-        <p> 
-          Established in 2021, Pax & Krem Mobile Store has a collection of over a 1,000 mobile phones. 
-        </p>
-        <p>
-          Press the button below to find the mobile phone of your desire.
-        </p>
-        <button class="btn btn-outline-secondary btn-lg">Start Shopping</button>
-      </div>
+      <div class="container form">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 my-2">
+              <div class="card-body p-4 p-sm-5">
+                <form>
+                  <div class="form-floating pl-3 pb-2 pt-3">
+                    <p>Email</p>
+                    <input type="email"  id="eemail" class="form-control" id="floatingInput">
+                    <p id="emailMessage" ></p>
+                  </div>
+                  <div class="form-floating pl-3 pb-2 pt-3 mb-5">
+                    <p>Password</p>
+                    <input type="password" id="pswd" class="form-control" id="floatingPassword">
+                    <p id="pwdMessage" ></p> 
+                  </div>
+    
+                  <div class="d-flex justify-content-center btn-sm login">
+                    <button class="btn btn-primary text-center" type="submit" onclick="return checkEmptyEi() & ValidateEmailEi()"/>Login</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
     </header>
+
 
     <!-- FOOTER -->
     <div class="d-flex flex-column h-100">

@@ -1,8 +1,6 @@
 <?php
 
-if (is_user_logged_in()) {
-    redirect_to('index.php');
-}
+require __DIR__ . '/src/bootstrap.php';
 
 $errors = [];
 $inputs = [];
@@ -30,18 +28,19 @@ if (is_post_request()) {
     [$inputs, $errors] = filter($_POST, $fields, $messages);
 
     if ($errors) {
-        redirect_with('register.php', [
-            'inputs' => escape_html($inputs),
-            'errors' => $errors
-        ]);
+        echo $errors;
+        // redirect_with('register.php', [
+        //     'inputs' => escape_html($inputs),
+        //     'errors' => $errors
+        // ]);
     }
 
     $activation_code = generate_activation_code();
-
-    if (register_user($inputs['email'], $inputs['username'], $inputs['password'], $activation_code)) {
+// function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
+    if (register_user($_POST['inputEmail'], $_POST['inputFname'], $_POST['inputPassword'], $activation_code)) {
 
         // send the activation email
-        send_activation_email($inputs['email'], $activation_code);
+        send_activation_email($_POST['inputEmail'], $activation_code);
 
         redirect_with_message(
             'login.php',
@@ -52,5 +51,6 @@ if (is_post_request()) {
 } else if (is_get_request()) {
     [$errors, $inputs] = session_flash('errors', 'inputs');
 }
-?>
 
+
+?>

@@ -55,7 +55,7 @@ body {
 
 
 .header {
-    background-image: url('images/phoneBackground.png');
+    background-image: url('../images/phoneBackground.png');
     background-size: cover;
     background-position: center;
     position: relative;

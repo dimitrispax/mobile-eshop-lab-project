@@ -54,8 +54,11 @@ body {
 }
 
 
+
+
+
 .header {
-    background-image: url('images/phoneBackground.png');
+    background-image: url('../images/bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -70,99 +73,27 @@ body {
     background: rgba(0, 0, 0, 0.6);
 }
 
-
-.perigrafh {
-    color: rgb(87, 145, 96);
-    border-radius: 20px;
-    border-style: solid;
-    border-color: rgb(26, 72, 89);
-    border-width: 2px;
-    height: 55px;
-    margin-top: 1vh;
-}
-
-.perigrafh h5 {
-    font-size: 27px;
-    font-weight: 00;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    text-decoration: none;
-    color: white;
-    margin-top: 0.3em;
-}
-
-
-
-
-.form {
-    padding-top: 5em;
-    padding-bottom: 6em;
-}
-
-
-.form-row input {
-    color: white;
-    background-color: rgb(36, 36, 36);
-}
-
-.form-row input:focus {
-    color: white;
-    background-color: rgb(36, 36, 36);
-}
-
-.form-group input {
-    color: white;
-    background-color: rgb(36, 36, 36);
-}
-
-.form-group input:focus {
-    color: white;
-    background-color: rgb(36, 36, 36);
-}
-
-.form-control {
-    border-radius: 12px;
-    border-color: rgb(26, 72, 89);
-    border-width: 2px;
-    font-family: 'Fira Sans Condensed', sans-serif;
-}
-
-.form-row label {
-    font-family: 'Fira Sans Condensed', sans-serif;
+.description {
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -55%);
     text-align: center;
-    align-items: center;
-    color: rgb(87, 145, 96);
 }
 
-.form-group label {
+.description h1 {
     font-family: 'Fira Sans Condensed', sans-serif;
-    text-align: center;
-    align-items: center;
     color: rgb(87, 145, 96);
 }
 
-
-
-.card {
-    background-color: rgba(36, 36, 36, 0.5);
-    color: rgb(67, 235, 226);
-    border-color: black;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 4%;
+.description p {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1.5;
 }
 
-.card-body {
-    /* border-color: rgb(124, 124, 124) */
-    border-color: rgb(36, 36, 36);
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 4%;
-}
-
-
-.register button {
-    margin-top: 30px;
-
+.description button {
     font-size: 1.15em;
     letter-spacing: 0.05rem;
     padding: 0.68em 2.9em;
@@ -184,7 +115,7 @@ body {
 
 }
 
-.register button:hover {
+.description button:hover {
     background-color: rgb(145, 87, 136);
     box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
     color: #fff;
@@ -192,19 +123,6 @@ body {
     border-color: transparent;
     transform: translateY(7px);
 }
-
-
-.register button:active {
-    background-color: rgb(145, 87, 136);
-    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
-    color: #fff;
-    border-style: solid;
-    border-color: transparent;
-    transform: translateY(7px);
-}
-
-
-
 
 
 
@@ -251,7 +169,7 @@ footer input {
     font-weight: 300;
     font-family: 'Fira Sans Condensed', sans-serif;
     text-decoration: none;
-    color: #545454;
+    color: inherit;
 }
 
 footer a:hover, a:focus {

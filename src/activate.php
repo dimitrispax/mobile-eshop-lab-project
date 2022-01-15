@@ -1,6 +1,19 @@
 <?php
 
-require __DIR__ . '/../src/bootstrap.php';
+require __DIR__ . '/bootstrap.php';
+
+function activate_user(int $user_id): bool
+{
+    $sql = 'UPDATE users
+            SET active = 1,
+                activated_at = CURRENT_TIMESTAMP
+            WHERE id=:id';
+
+    $statement = db()->prepare($sql);
+    $statement->bindValue(':id', $user_id, PDO::PARAM_INT);
+
+    return $statement->execute();
+}
 
 if (is_get_request()) {
 
@@ -17,7 +30,7 @@ if (is_get_request()) {
         // if user exists and activate the user successfully
         if ($user && activate_user($user['id'])) {
             redirect_with_message(
-                'login.php',
+                '../index.php',
                 'You account has been activated successfully. Please login here.'
             );
         }
@@ -30,3 +43,5 @@ redirect_with_message(
     'The activation link is not valid, please register again.',
     FLASH_ERROR
 );
+
+?>

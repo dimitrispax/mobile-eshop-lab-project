@@ -12,8 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="registerStyle.css">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/registerStyle.css">
 </head>
 
 <body>
@@ -55,7 +55,7 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card border-0 my-2">
                         <div class="card-body p-4 p-sm-5">
-                            <form action="src/auth.php" method="post">
+                            <form action="do_register.php" method="post">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputFname">First Name</label>
