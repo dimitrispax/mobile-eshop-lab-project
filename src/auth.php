@@ -35,20 +35,20 @@ function register_user(string $fname, string $lname, string $email,string $passw
     $statement->bindValue(':pCode', $pCode);
     $statement->bindValue(':mPhone', $mPhone);
     $statement->bindValue(':is_admin', (int)$is_admin, PDO::PARAM_INT);
-    $statement->bindValue(':activation_code', $activation_code);
+    $statement->bindValue(':activation_code', password_hash($activation_code, PASSWORD_DEFAULT));
     $statement->bindValue(':activation_expiry', date('Y-m-d H:i:s',  time() + $expiry));
 
     return $statement->execute();
 }
 
-function find_user_by_username(string $username)
+function find_user_by_username(string $email)
 {
-    $sql = 'SELECT username, password, active, email
+    $sql = 'SELECT password, active, email
             FROM users
-            WHERE username=:username';
+            WHERE email=:email';
 
     $statement = db()->prepare($sql);
-    $statement->bindValue(':username', $username);
+    $statement->bindValue(':email', $email);
     $statement->execute();
 
     return $statement->fetch(PDO::FETCH_ASSOC);
@@ -59,9 +59,9 @@ function is_user_active($user)
     return (int)$user['active'] === 1;
 }
 
-function login(string $username, string $password): bool
+function login(string $email, string $password): bool
 {
-    $user = find_user_by_username($username);
+    $user = find_user_by_username($email);
 
     if ($user && is_user_active($user) && password_verify($password, $user['password'])) {
         // prevent session fixation attack
@@ -69,7 +69,7 @@ function login(string $username, string $password): bool
 
         // set username in the session
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
 
         return true;
     }
@@ -85,7 +85,7 @@ function generate_activation_code(): string
 function send_activation_email(string $email, string $activation_code): void
 {
     // create the activation link
-    $activation_link = "https://localhost:8080/src/activate.php?email=$email&activation_code=$activation_code";
+    $activation_link = "http://localhost:8080/src/activate.php?email=$email&activation_code=$activation_code";
 
     // set email subject & body
     $message = <<<MESSAGE
@@ -145,13 +145,14 @@ function find_unverified_user(string $activation_code, string $email)
             FROM users
             WHERE active = 0 AND email=:email';
 
+    
     $statement = db()->prepare($sql);
 
     $statement->bindValue(':email', $email);
     $statement->execute();
-
+    
     $user = $statement->fetch(PDO::FETCH_ASSOC);
-
+    
     if ($user) {
         // already expired, delete the in active user with expired activation code
         if ((int)$user['expired'] === 1) {

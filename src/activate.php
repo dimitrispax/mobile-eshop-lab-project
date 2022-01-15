@@ -38,11 +38,5 @@ if (is_get_request()) {
 }
 
 echo($user);
-// redirect to the register page in other cases
-// redirect_with_message(
-//     '/../register.php',
-//     'The activation link is not valid, please register again.',
-//     FLASH_ERROR
-// );
 
 ?>
