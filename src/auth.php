@@ -110,7 +110,7 @@ function send_activation_email(string $email, string $activation_code): void
         $mail->Port = 587;
 
         //Recepients
-        $mail->setFrom('diepafi123@gmail.com', 'yo yo');
+        $mail->setFrom('diepafi123@gmail.com', 'Diepafi Lab Project');
         $mail->addAddress($email);
         $mail->addReplyTo($email);
 
