@@ -48,7 +48,7 @@ session_start();
               <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.php"><img src="images/logo.png" width=70px></a>
 
               <li class="nav-item ml-lg-5 order-4 order-lg-4">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="contact.php">Contact</a>
               </li>
               <li class="nav-item ml-lg-3 order-5 order-lg-5">
               <?php

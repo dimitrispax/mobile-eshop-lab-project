@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/loginStyle.css">
+    <link rel="stylesheet" href="css/contactStyle.css">
 </head>
 
 <body>
@@ -50,36 +50,70 @@
     <!-- HEADER -->
     <header class="page-header header container-fluid">
       <div class="overlay"></div>
-      <form action="do_login.php" method="post">
-      <div class="container form">
-        <div class="row">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card border-0 my-2">
-              <div class="card-body p-4 p-sm-5">
-                <form>
-                  <div class="form-floating pl-3 pb-2 pt-3">
-                    <p>Email</p>
-                    <input type="email"  id="email" name='email' class="form-control" id="floatingInput">
-                    <p id="emailMessage" ></p>
-                  </div>
-                  <div class="form-floating pl-3 pb-2 pt-3 mb-5">
-                    <p>Password</p>
-                    <input type="password" id="pwd" name='pwd' class="form-control" id="floatingPassword">
-                    <p id="pwdMessage" ></p> 
-                  </div>
-    
-                  <div class="d-flex justify-content-center btn-sm login">
-                    <button class="btn btn-primary text-center" type="submit"/>Login</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </form>
-    </header>
+    <div class="container-fluid w-100  perigrafh">
+        <h5 class="text-center">Pax & Krem - Contact</h5>
+    </div>
 
+    <div class=" container-fluid w-75 map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6511.003037177808!2d25.1025295930497!3d35.318365662409406!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6c482560eda50080!2zzpXOu867zrfOvc65zrrPjCDOnM61z4POv86zzrXOuc6xzrrPjCDOoM6xzr3Otc-AzrnPg8-Ezq7OvM65zr8!5e0!3m2!1sen!2sus!4v1638836001515!5m2!1sen!2sus"
+            width="100%" height="450" style="border-color: rgb(169, 145, 93); border-color: rgb(169, 145, 93);"
+            allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="container contact">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="well well-sm">
+                    <form action="do_contact.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">First Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="surname">Last Name</label>
+                                    <input type="text" class="form-control" id="surname" name="surname" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="email" name="email" required="required" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name"> Message </label>
+                                    <textarea name="message" id="message" name="message" class="form-control" rows="9" cols="25"
+                                        required="required" placeholder="Write your message here."></textarea>
+                                    <div class="d-flex justify-content-center contactBtn">
+                                        <button type="submit" class="btn btn-primary" id="btnContactUs">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 info">
+                <form>
+                    <h2> Contact us! </h2>
+                    <h3> Address </h3>
+                    <p>Hellenic Mediterrenean University, 71410 Heraklion, Crete</p>
+                    <h3> Email </h3>
+                    <p><a href="mailto:diepafi123@gmail.com">diepafi123@gmail.com</a></p>
+                    <h3> Phone </h3>
+                    <p>+30  2810235900</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </header>
 
     <!-- FOOTER -->
     <div class="d-flex flex-column h-100">
