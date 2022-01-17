@@ -29,23 +29,39 @@ if (is_post_request()) {
 
     if ($errors) {
         echo $errors;
-        // redirect_with('register.php', [
-        //     'inputs' => escape_html($inputs),
-        //     'errors' => $errors
-        // ]);
     }
 
-    $activation_code = generate_activation_code();
-// function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
-    if (register_user($_POST['inputFname'], $_POST['inputLname'], $_POST['inputEmail'], $_POST['inputPassword'], $_POST['inputAddress'], $_POST['inputCity'], $_POST['inputPostal'], $_POST['inputPhone'], $activation_code)) {
+    // Given password
+    $password = $_POST['inputPassword'];
+    $rePassword = $_POST['inputRePassword'];
 
-        // send the activation email
-        send_activation_email($_POST['inputEmail'], $activation_code);
+    // Validate password strength
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $number    = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
 
-        redirect_with_message(
-            'login.php',
-            'Please check your email to activate your account before signing in'
-        );
+    if($password === $rePassword) {
+
+        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+            header('Location: register.php');
+        } else {
+            echo 'Strong password.';
+            $activation_code = generate_activation_code();
+        // function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
+            if (register_user($_POST['inputFname'], $_POST['inputLname'], $_POST['inputEmail'], $_POST['inputPassword'], $_POST['inputAddress'], $_POST['inputCity'], $_POST['inputPostal'], $_POST['inputPhone'], $activation_code)) {
+
+                // send the activation email
+                send_activation_email($_POST['inputEmail'], $activation_code);
+
+                redirect_with_message(
+                    'login.php',
+                    'Please check your email to activate your account before signing in'
+                );
+            }
+        }
+    } else {
+        header('Location: register.php');
     }
 
 } else if (is_get_request()) {

@@ -13,7 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="js/main.js"></script>
+    <script src="js/verifyPassword.js"></script>
     <link rel="stylesheet" href="css/registerStyle.css">
+
 </head>
 
 <body>
@@ -32,7 +34,7 @@
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
                 <li class="nav-item mr-lg-5 order-3 order-lg-2">
-                    <a class="nav-link" href="#">Mobile Phones</a>
+                    <a class="nav-link" href="phones.php">Mobile Phones</a>
                 </li>
                 <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.php"><img src="images/logo.png" width=70px></a>
 
@@ -56,6 +58,7 @@
                     <div class="card border-0 my-2">
                         <div class="card-body p-4 p-sm-5">
                             <form action="do_register.php" method="post">
+                            <form>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputFname">First Name</label>
@@ -74,6 +77,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="inputPassword">Password</label>
                                         <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password">
+                                        <p id="pwdMessage"></p>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputRePassword">Confirm Password</label>
@@ -98,16 +102,8 @@
                                     <label for="inputPhone">Mobile Phone</label>
                                     <input type="tel" class="form-control" id="inputPhone" name="inputPhone" placeholder="">
                                 </div>
-                                <!-- <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Check me out
-                                </label>
-                            </div>
-                        </div> -->
                                 <div class="d-flex justify-content-center btn-sm register">
-                                    <button class="btn btn-primary text-center" type="submit" />Register</button>
+                                    <button class="btn btn-primary text-center" type="submit" onclick="">Register</button>
                                 </div>
                             </form>
                         </div>

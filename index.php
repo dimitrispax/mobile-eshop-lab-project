@@ -76,7 +76,9 @@ session_start();
         <p>
           Press the button below to find the mobile phone of your desire.
         </p>
-        <button class="btn btn-outline-secondary btn-lg">Start Shopping</button>
+        <a href="phones.php">
+            <button class="btn btn-outline-secondary btn-lg">Start Shopping</button>
+        </a>
       </div>
     </header>
 

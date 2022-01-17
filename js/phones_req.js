@@ -46,7 +46,6 @@ function reqListener () {
         h5.classList.add('mt-2', 'd-flex', 'flex-column');
         h5.textContent = element.model;
         card.appendChild(h5);
-
        
         let pCpu = document.createElement('p');
         pCpu.textContent = "CPU: ";
@@ -112,18 +111,12 @@ function reqListener () {
         spanPrice.classList.add('info-left');
         price.appendChild(spanPrice);
 
-
-
         // button
         let btn = document.createElement('button');
         btn.classList.add('btn', 'btn-outline-light', 'mt-auto', 'mb-2');
         btn.textContent = 'Add to basket';
         card.appendChild(btn);
       });
-
-
-
-     
 
     }
       // console.log(this.responseText); // Will alert: 42

@@ -25,10 +25,10 @@ function validate(array $data, array $fields, array $messages = []): array
 {
     // Split the array by a separator, trim each element
     // and return the array
-    $split = fn($str, $separator) -> array_map('trim', explode($separator, $str));
+    $split = fn($str, $separator) => array_map('trim', explode($separator, $str));
 
     // get the message rules
-    $rule_messages = array_filter($messages, fn($message) -> is_string($message));
+    $rule_messages = array_filter($messages, fn($message) => is_string($message));
     // overwrite the default message
     $validation_errors = array_merge(DEFAULT_VALIDATION_ERRORS, $rule_messages);
 

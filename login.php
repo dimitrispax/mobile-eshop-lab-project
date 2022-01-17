@@ -32,7 +32,7 @@
                   <a class="nav-link" href="login.php">Login</a>
               </li>
               <li class="nav-item mr-lg-5 order-3 order-lg-2">
-                  <a class="nav-link" href="#">Mobile Phones</a>
+                  <a class="nav-link" href="phones.php">Mobile Phones</a>
               </li>
               <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.php"><img src="images/logo.png" width=70px></a>
 
