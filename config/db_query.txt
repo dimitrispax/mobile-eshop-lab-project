@@ -17,3 +17,36 @@ CREATE TABLE users
     created_at        timestamp    NOT NULL DEFAULT current_timestamp(),
     updated_at        datetime              DEFAULT current_timestamp() ON UPDATE current_timestamp()
 )
+
+CREATE TABLE phones(
+    productId int AUTO_INCREMENT PRIMARY KEY,
+    price int NOT NULL,
+    quantity int NOT NULL,
+    photoURL varchar(255) NOT NULL,
+    model varchar(255) NOT NULL,
+    screenSize varchar(50) NOT NULL,
+    cpu varchar(50) NOT NULL,
+    ram varchar(50) NOT NULL,
+    camera varchar(50) NOT NULL,
+    battery varchar(50) NOT NULL,
+    sar varchar(50) NOT NULL
+);
+
+
+##################### EXAMPLE QUERY PHONE INSERT ###############################
+INSERT INTO phones(price, quantity, photoURL, model, screenSize, cpu, ram, camera, battery, sar)
+VALUES
+(1200, 2, "https://d.scdn.gr/images/sku_main_images/027621/27621358/20210312110822_xiaomi_mi_11_256gb_horizon_blue.jpeg", "Xiaomi Mi 11", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 "),
+(328, 5, "https://a.scdn.gr/images/sku_main_images/030662/30662995/20210830101603_samsung_galaxy_a52s_128gb_awesome_black.jpeg", "Samsung Galaxy A52s 5G (6GB/128GB) Awesome Black", "6.81", "Snapdragon 888", "8GB", "108MP", "4600 mAh", "0.95 ")
