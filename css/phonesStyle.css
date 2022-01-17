@@ -24,9 +24,63 @@ button {
 .profiles img {
     margin-right: -6px
 }
+.pagination li {
+    display: block;
+}
 
+.pagination {
+    display: flex;
+    justify-content: center;
+  }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+}
 
+.card-title {
+    padding-top: 1em !important;
+    font-size: 19px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.image {
+    width: 300px !important;
+}
+
+.card-title-bottom{
+    padding-bottom: 1em !important;
+    font-size: 19px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.info-left {
+    float: right;
+}
+
+.card-text {
+padding-top: 1em !important;
+    font-size: 16px;
+    font-weight: 200;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.btn {
+    border-color: transparent;
+    border-radius: 12px;
+    background-color: #a9915d;
+    font-size: 17px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+.btn:hover{
+    background-color: #a9915dc0;
+    border-color: transparent;
+}
+
+  
 @media(min-width:992px) {
     #hidden-logo-large {
         display: none;
