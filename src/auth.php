@@ -85,7 +85,7 @@ function generate_activation_code(): string
 function send_activation_email(string $email, string $activation_code): void
 {
     // create the activation link
-    $activation_link = "http://localhost:8080/src/activate.php?email=$email&activation_code=$activation_code";
+    $activation_link = "http://localhost/src/activate.php?email=$email&activation_code=$activation_code";
 
     // set email subject & body
     $message = <<<MESSAGE
