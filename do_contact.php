@@ -10,7 +10,8 @@ require __DIR__. '/vendor/autoload.php';
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-    $message =  $name . " " . $surname . "with email: " . $email . ", " . " sends you the following message: " . $message;
+    $message = 
+     $name . " " . $surname . " with email: " . $email . ", " . " sends you the following message: " . $message;
 
     $mail = new PHPMailer(true);
     //SMTP Config
@@ -28,7 +29,7 @@ require __DIR__. '/vendor/autoload.php';
     $mail->addReplyTo('diepafi123@gmail.com');
     //Content
     $mail->isHTML(true);
-    $mail->Subject = 'Pax & Krem | Mail Activation';
+    $mail->Subject = 'Pax & Krem | Contact Form';
     $mail->Body = $message;
     $mail->send();
     header('Location: contact.php');
