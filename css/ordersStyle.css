@@ -1,0 +1,249 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: rgb(36, 36, 36);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+}
+
+@media(min-width:992px) {
+    #hidden-logo-large {
+        display: none;
+    }
+
+    .nav-link {
+        margin-top: 0.8em !important;
+        margin-left: 3em !important;
+        margin-right: 3em !important;
+    }
+}
+
+@media(max-width:992px) {
+    #hidden-logo-collapse {
+        display: none;
+    }
+}
+
+.navbar a {
+
+    font-size: 21px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: white;
+    white-space: pre;
+
+}
+
+.nav-link,
+.navbar-brand {
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: rgba(209, 204, 255, 0.836);
+}
+
+.fa-bars {
+    color: white;
+}
+
+
+.header {
+    background-image: url('../images/phoneBackground.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+.perigrafh {
+    color: rgb(87, 145, 96);
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(26, 72, 89);
+    border-width: 2px;
+    height: 55px;
+    margin-top: 1vh;
+}
+
+.perigrafh h5 {
+    font-size: 27px;
+    font-weight: 00;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: white;
+    margin-top: 0.3em;
+}
+
+
+
+
+.form {
+    padding-top: 5em;
+    padding-bottom: 6em;
+}
+
+
+.form-floating input {
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
+
+.form-floating input:focus {
+    color: white;
+    background-color: rgb(36, 36, 36);
+}
+
+.form-control {
+    border-radius: 12px;
+    border-color: rgb(26, 72, 89);
+    border-width: 2px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.form-floating p {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-align: center;
+    align-items: center;
+    color: rgb(87, 145, 96);
+}
+
+.card {
+    background-color: rgba(36, 36, 36, 0.5);
+    color: rgb(67, 235, 226);
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5%;
+}
+
+.card-body {
+    /* border-color: rgb(124, 124, 124) */
+    border-color: rgb(36, 36, 36);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5%;
+}
+
+
+.login button {
+    font-size: 1.15em;
+    letter-spacing: 0.05rem;
+    padding: 0.68em 2.9em;
+    background-color: rgba(145, 87, 136, 0.8);
+    border-radius: 1em;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+
+
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.login button:hover {
+    background-color: rgb(145, 87, 136);
+    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
+    color: #fff;
+    border-style: solid;
+    border-color: transparent;
+    transform: translateY(7px);
+}
+
+
+.login button:active {
+    background-color: rgb(145, 87, 136);
+    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
+    color: #fff;
+    border-style: solid;
+    border-color: transparent;
+    transform: translateY(7px);
+}
+
+
+
+
+
+
+footer {
+    background-color: rgb(36, 36, 36);
+}
+
+footer p {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+footer li {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+footer h5 {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+footer a {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+footer input {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: #545454;
+}
+
+footer a:hover, a:focus {
+    text-decoration: none;
+}
+
+.form-control {
+    background: #212529;
+    border-color: #545454;
+}
+
+.form-control:focus {
+    background: #212529;
+}

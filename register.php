@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+$_SESSION['login_message'] = "";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +84,16 @@
                                     <div class="form-group col-md-6">
                                         <label for="inputPassword">Password</label>
                                         <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password">
-                                        <p id="pwdMessage"></p>
+                                        <?php 
+                                            if(isset($_SESSION['pas_verify_error'])) {
+                                                if(!empty($_SESSION['pas_verify_error'])) {
+                                                    echo '<p id="pwdMessage">'.$_SESSION['pas_verify_error'].'</p>';
+                                                }
+                                            } else {
+                                                echo '<p id="pwdMessage"></p>';
+                                            }
+                                        ?>
+                                        
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputRePassword">Confirm Password</label>

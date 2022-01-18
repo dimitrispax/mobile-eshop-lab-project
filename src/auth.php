@@ -21,6 +21,20 @@ require __DIR__. '/../vendor/autoload.php';
 */
 function register_user(string $fname, string $lname, string $email,string $password, string $address, string $city, string $pCode, string $mPhone, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
 {
+    $user = find_user_by_username($email);
+    if($user) {
+        if(!is_user_active($user)) {
+            $_SESSION['login_message'] = "User already exists. Please activate your email";
+            header('Location: login.php');
+            die();
+        } else {
+            $_SESSION['login_message'] = "User already exists. Please login.";
+            header('Location: login.php');
+            die();
+        }
+        
+    }
+
     $sql = 'INSERT INTO users(fName, lName, email, password, address, city, pCode, mPhone, is_admin, activation_code, activation_expiry)
             VALUES(:fName, :lName, :email, :password, :address, :city, :pCode, :mPhone, :is_admin, :activation_code, :activation_expiry)';
 
@@ -85,7 +99,7 @@ function generate_activation_code(): string
 function send_activation_email(string $email, string $activation_code): void
 {
     // create the activation link
-    $activation_link = "http://localhost/src/activate.php?email=$email&activation_code=$activation_code";
+    $activation_link = "http://localhost:8080/src/activate.php?email=$email&activation_code=$activation_code";
 
     // set email subject & body
     $message = <<<MESSAGE

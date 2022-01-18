@@ -42,26 +42,47 @@ if (is_post_request()) {
     $specialChars = preg_match('@[^\w]@', $password);
 
     if($password === $rePassword) {
-
-        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+        if(!$uppercase) {
+            $_SESSION['pas_verify_error'] = "Must contain uppercase letters";
             header('Location: register.php');
-        } else {
-            echo 'Strong password.';
-            $activation_code = generate_activation_code();
-        // function register_user(string $email, string $username, string $password, string $activation_code, int $expiry = 1 * 24  * 60 * 60, bool $is_admin = false): bool
-            if (register_user($_POST['inputFname'], $_POST['inputLname'], $_POST['inputEmail'], $_POST['inputPassword'], $_POST['inputAddress'], $_POST['inputCity'], $_POST['inputPostal'], $_POST['inputPhone'], $activation_code)) {
-
-                // send the activation email
-                send_activation_email($_POST['inputEmail'], $activation_code);
-
-                redirect_with_message(
-                    'login.php',
-                    'Please check your email to activate your account before signing in'
-                );
-            }
+            die();
+        } 
+        if(!$lowercase) {
+            $_SESSION['pas_verify_error'] = "Must contain lowercase letters";
+            header('Location: register.php');
+            die();
         }
+        if(!$number) {
+            $_SESSION['pas_verify_error'] = "Must contain numbers";
+            header('Location: register.php');
+            die();
+        }
+        if(!$specialChars) {
+            $_SESSION['pas_verify_error'] = "Must contain special characters";
+            header('Location: register.php');
+            die();
+        }
+        if(strlen($password) < 8) {
+            $_SESSION['pas_verify_error'] = "Must contain at least 8 characters";
+            header('Location: register.php');
+            die();
+        }
+
+        echo 'Strong password.';
+        $_SESSION['pas_verify_error'] = "";
+        $activation_code = generate_activation_code();
+        if (register_user($_POST['inputFname'], $_POST['inputLname'], $_POST['inputEmail'], $_POST['inputPassword'], $_POST['inputAddress'], $_POST['inputCity'], $_POST['inputPostal'], $_POST['inputPhone'], $activation_code)) {
+
+            // send the activation email
+            send_activation_email($_POST['inputEmail'], $activation_code);
+            $_SESSION['login_message'] = "Please check your email to activate your account before signing in.";
+            header('Location: login.php');
+        }
+        
     } else {
+        $_SESSION['pas_verify_error'] = "You have not entered the same password";
         header('Location: register.php');
+        die();
     }
 
 } else if (is_get_request()) {

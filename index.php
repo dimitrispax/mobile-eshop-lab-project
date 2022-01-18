@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+$_SESSION['pas_verify_error'] = "";
+$_SESSION['login_message'] = "";
 
 ?>
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ session_start();
                 if (!isset($_SESSION['logged'])) {
                     echo '<a class="nav-link" href="register.php">Register</a>';
                 } else {
-                    echo '<a class="nav-link" href="#">My Orders</a>';
+                    echo '<a class="nav-link" href="orders.php">My Orders</a>';
                 }
                 ?>
               </li>

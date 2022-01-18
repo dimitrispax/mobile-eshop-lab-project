@@ -32,6 +32,13 @@ CREATE TABLE phones(
     sar varchar(50) NOT NULL
 );
 
+CREATE TABLE orders(
+    orderID int auto_increment PRIMARY KEY,
+    productID int NOT NULL,
+    userID int NOT NULL,
+    date timestamp NOT NULL DEFAULT current_timestamp()
+)
+
 
 ##################### EXAMPLE QUERY PHONE INSERT ###############################
 INSERT INTO phones(price, quantity, photoURL, model, screenSize, cpu, ram, camera, battery, sar)

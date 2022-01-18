@@ -1,13 +1,14 @@
-<?php 
+<?php
+
 session_start();
 $_SESSION['pas_verify_error'] = "";
+$_SESSION['login_message'] = "";
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <title>Pax & Krem | Mobile Store</title>
     <link rel="icon" type="image" href="images/logo.png" />
     <meta charset="utf-8">
@@ -16,79 +17,67 @@ $_SESSION['pas_verify_error'] = "";
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,300;1,200&family=Raleway:wght@300&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/loginStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="js/orders_req.js"></script>
+    <script src="js/pagin.js"></script>
+    <link rel="stylesheet" href="css/ordersStyle.css">
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" id="hidden-logo-large" href="#"><img src="images/logo.png" width=70px></a>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navigation-menu">
             <span class="navbar-toggler-icon">
-              <i class="fas fa-bars"></i>
-            </span> 
+                <i class="fas fa-bars"></i>
+            </span>
         </button>
         <div class="collapse navbar-collapse navigation-menu" id="myNavbarToggler7">
-          <ul class="navbar-nav mx-auto">
-              <li class="nav-item mr-lg-3 order-2 order-lg-1">
-                  <a class="nav-link" href="login.php">Login</a>
-              </li>
-              <li class="nav-item mr-lg-5 order-3 order-lg-2">
-                  <a class="nav-link" href="phones.php">Mobile Phones</a>
-              </li>
-              <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.php"><img src="images/logo.png" width=70px></a>
-
-              <li class="nav-item ml-lg-5 order-4 order-lg-4">
-                  <a class="nav-link" href="contact.php">Contact</a>
-              </li>
-              <li class="nav-item ml-lg-3 order-5 order-lg-5">
-                  <a class="nav-link" href="register.php">Register</a>
-              </li>
-          </ul>
-        </div>
-    </nav>
-
-
-    <!-- HEADER -->
-    <header class="page-header header container-fluid">
-      <div class="overlay"></div>
-      <div class="container form">
-        <div class="row">
-          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card border-0 my-2">
-              <div class="card-body p-4 p-sm-5">
-                <form action="do_login.php" method="post">
-                  <div class="form-floating pl-3 pb-2 pt-3">
-                    <?php 
-                        if(isset($_SESSION['login_message']) && !empty($_SESSION['login_message'])) {
-                            echo '<p id="loginMessage">'.$_SESSION['login_message'].'</p>';
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item mr-lg-3 order-2 order-lg-1">
+                    <?php
+                        if (!isset($_SESSION['logged'])) {
+                            echo '<a class="nav-link" href="login.php">Login</a>';
                         } else {
-                            echo '<p id="loginMessage"></p>';
+                            echo '<a class="nav-link" href="do_logout.php">Logout</a>';
                         }
                     ?>
-                    <p>Email</p>
-                    <input type="email"  id="email" name='email' class="form-control" id="floatingInput">
-                    <p id="emailMessage" ></p>
-                  </div>
-                  <div class="form-floating pl-3 pb-2 pt-3 mb-5">
-                    <p>Password</p>
-                    <input type="password" id="pwd" name='pwd' class="form-control" id="floatingPassword">
-                    <p id="pwdMessage" ></p> 
-                  </div>
-    
-                  <div class="d-flex justify-content-center btn-sm login">
-                    <button class="btn btn-primary text-center" type="submit"/>Login</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+                </li>
+                <li class="nav-item mr-lg-5 order-3 order-lg-2">
+                    <a class="nav-link" href="phones.php">Mobile Phones</a>
+                </li>
+                <a class="navbar-brand order-1 order-lg-3" id="hidden-logo-collapse" href="index.php"><img src="images/logo.png" width=70px></a>
+
+                <li class="nav-item ml-lg-5 order-4 order-lg-4">
+                    <a class="nav-link" href="contact.php">Contact</a>
+                </li>
+                <li class="nav-item ml-lg-3 order-5 order-lg-5">
+                    <?php
+                    if (!isset($_SESSION['logged'])) {
+                        echo '<a class="nav-link" href="register.php">Register</a>';
+                    } else {
+                        echo '<a class="nav-link" href="orders.php">My Orders</a>';
+                    }
+                    ?>
+                </li>
+            </ul>
         </div>
-      </div>
+    </nav>
+        <div class="container mt-5 mb-5" style="display:none;">
+            <div class="card-content" style="display: none">
+                <div class="row mt-1" id="row"></div>
+            </div>
+            <div class="pagination mt-4" style="display:none;">
+                <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+                <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
+                <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
+                <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+                <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
+                <li class="page-item next-page"><a class="page-link" href="#">Next</a></li>
+            </div>
+        </div>
     </header>
 
 
@@ -134,6 +123,5 @@ $_SESSION['pas_verify_error'] = "";
             </div>
         </footer>
     </div>
-
 </body>
 </html>
