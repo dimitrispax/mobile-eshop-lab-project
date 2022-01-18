@@ -117,7 +117,6 @@ $_SESSION['pas_verify_error'] = "";
                             <li><a href="index.php">Home</a></li>
                             <li><a href="phones.php">Mobile Phones</a></li>
                             <li><a href="contact.php">Contact</a></li>
-                            <li><a href="orders.php">My Orders</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-md-6">

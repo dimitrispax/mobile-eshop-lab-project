@@ -36,7 +36,7 @@ CREATE TABLE orders(
     orderID int auto_increment PRIMARY KEY,
     productID int NOT NULL,
     userID int NOT NULL,
-    date timestamp NOT NULL DEFAULT current_timestamp()
+    date timestamp NOT NULL DEFAULT current_timestamp() 
 )
 
 
