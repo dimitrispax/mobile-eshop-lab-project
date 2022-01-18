@@ -53,136 +53,95 @@ body {
     color: white;
 }
 
-
 .header {
-    background-image: url('../images/phoneBackground.png');
+    background-image: url('../images/bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-.overlay {
-    position: absolute;
-    min-height: 100%;
-    min-width: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-
-.perigrafh {
-    color: rgb(87, 145, 96);
-    border-radius: 20px;
-    border-style: solid;
-    border-color: rgb(26, 72, 89);
-    border-width: 2px;
-    height: 55px;
-    margin-top: 1vh;
-}
-
-.perigrafh h5 {
-    font-size: 27px;
-    font-weight: 00;
-    font-family: 'Fira Sans Condensed', sans-serif;
-    text-decoration: none;
-    color: white;
-    margin-top: 0.3em;
-}
-
-
-
-
-.form {
-    padding-top: 5em;
-    padding-bottom: 6em;
-}
-
-
-.form-floating input {
-    padding-top: 1.4em;
-    padding-bottom: 1.4em;
-    color: white;
-    background-color: rgb(36, 36, 36);
-}
-
-.form-floating input:focus {
-    color: white;
-    background-color: rgb(36, 36, 36);
-}
-
-.form-control {
-    border-radius: 12px;
-    border-color: rgb(26, 72, 89);
-    border-width: 2px;
-    font-family: 'Fira Sans Condensed', sans-serif;
-}
-
-.form-floating p {
-    font-family: 'Fira Sans Condensed', sans-serif;
-    text-align: center;
+/* .orders {
     align-items: center;
-    color: rgb(87, 145, 96);
+    justify-content: center;
+} */
+
+
+.out {
+    align-self: center;
 }
 
-.card {
-    background-color: rgba(36, 36, 36, 0.5);
-    color: rgb(67, 235, 226);
-    border-color: black;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 5%;
+.border-secondary {
+    color: rgb(26, 72, 89);
+    border-radius: 12px;
 }
 
-.card-body {
-    /* border-color: rgb(124, 124, 124) */
-    border-color: rgb(36, 36, 36);
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 5%;
+.profiles img {
+    margin-right: -6px
 }
 
+.pagination li {
+    display: block;
+}
 
-.login button {
-    font-size: 1.15em;
-    letter-spacing: 0.05rem;
-    padding: 0.68em 2.9em;
-    background-color: rgba(145, 87, 136, 0.8);
-    border-radius: 1em;
-    border-style: solid;
-    border-color: transparent;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
+.pagination {
+    display: flex;
+    justify-content: center;
+}
 
+.pagination {
+    display: flex;
+    justify-content: center;
+}
 
-    font-family: 'Fira Sans Condensed', sans-serif;
-    font-weight: 300;
-    color: white;
+.card-title {
+    padding-top: 1em !important;
+    font-size: 19px;
+    font-weight: 600;
     text-align: center;
-    text-decoration: none;
-
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
 
-.login button:hover {
-    background-color: rgb(145, 87, 136);
-    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
-    color: #fff;
-    border-style: solid;
+.image {
+    max-width: 300px !important;
+    max-height: 400px !important;
+    min-width: 300px !important;
+    min-height: 300px !important;
+}
+
+
+.info-left {
+    float: right;
+}
+
+.price {
+    font-size: larger;
+    float: right;
+}
+
+.card-text {
+    padding-top: 1em !important;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+
+.btn {
     border-color: transparent;
-    transform: translateY(7px);
+    border-radius: 12px;
+    background-color: rgba(145, 87, 136, 0.8) !important;
+    color: white;
+    font-size: 17px;
+    font-weight: 300;
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
 
-
-.login button:active {
+.btn:hover {
     background-color: rgb(145, 87, 136);
-    box-shadow: 0px 15px 20px rgba(2, 85, 52, 0.4);
-    color: #fff;
-    border-style: solid;
+    color: white;
     border-color: transparent;
-    transform: translateY(7px);
 }
+
 
 
 
@@ -232,7 +191,7 @@ footer input {
     font-weight: 300;
     font-family: 'Fira Sans Condensed', sans-serif;
     text-decoration: none;
-    color: #545454;
+    color: inherit;
 }
 
 footer a:hover, a:focus {

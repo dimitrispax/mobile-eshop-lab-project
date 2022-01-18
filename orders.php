@@ -63,20 +63,12 @@ $_SESSION['login_message'] = "";
             </ul>
         </div>
     </nav>
-        <div class="container mt-5 mb-5" style="display:none;">
-            <div class="card-content" style="display: none">
+    <header>
+        <div class="container out">
+            <div class="card-content order-2" >
                 <div class="row mt-1" id="row"></div>
             </div>
-            <div class="pagination mt-4" style="display:none;">
-                <li class="page-item previous-page disable"><a class="page-link" href="#">Prev</a></li>
-                <li class="page-item current-page active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-                <li class="page-item current-page"><a class="page-link" href="#">5</a></li>
-                <li class="page-item current-page"><a class="page-link" href="#">6</a></li>
-                <li class="page-item dots"><a class="page-link" href="#">...</a></li>
-                <li class="page-item current-page"><a class="page-link" href="#">10</a></li>
-                <li class="page-item next-page"><a class="page-link" href="#">Next</a></li>
-            </div>
+            
         </div>
     </header>
 
@@ -103,10 +95,10 @@ $_SESSION['login_message'] = "";
                     <div class="col-lg-2 col-md-6">
                         <h5 class="text-white mb-3">Quick links</h5>
                         <ul class="list-unstyled text-muted">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Mobile Phones</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">My Cart</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="phones.php">Mobile Phones</a></li>
+                            <li><a href="contact.php">Contact</a></li>
+                            <li><a href="orders.php">My Orders</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-md-6">

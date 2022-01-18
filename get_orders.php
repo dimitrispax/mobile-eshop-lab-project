@@ -1,35 +1,55 @@
 <?php
-    //open connection to mysql db
-    $connection = mysqli_connect("localhost","root","root","eshop") or die("Error " . mysqli_error($connection));
+
+session_start();
+
+$connection = mysqli_connect("localhost","root","root","eshop") or die("Error " . mysqli_error($connection));
 
 
-    //fetch table rows from mysql db
-    $sqlusers = "SELECT id FROM users WHERE email= '".$_SESSION['email']."'";     
-    $resultusers = mysqli_query($connection, $sqlusers) or die("Error in Selecting " . mysqli_error($connection));
+//fetch table rows from mysql db
+$sqlusers = "SELECT id FROM users WHERE email= '".$_SESSION['email']."'";     
+$resultusers = mysqli_query($connection, $sqlusers) or die("Error in Selecting " . mysqli_error($connection));
 
+while($row = mysqli_fetch_array($resultusers)){ 
+    
     $UserId = $row['id'];
+    
+ }
 
 
-    //fetch table rows from mysql db
-    $sqlorders = "SELECT productId FROM orders WHERE userId= ' ". $UserId . " ' ";    
-    $resultorders = mysqli_query($connection, $sqlorders) or die("Error in Selecting " . mysqli_error($connection));
-
-    $ProductId = $row['productId'];
+//  echo $UserId;
 
 
-    $sqlproducts = "SELECT * FROM products WHERE productId= ' ". $ProductId . " ' ";    
-    $result = mysqli_query($connection, $sqlproducts) or die("Error in Selecting " . mysqli_error($connection));
+//fetch table rows from mysql db
+$sqlorders = "SELECT productID, date FROM orders WHERE userID= ' ". $UserId . " ' ";    
+$resultorders = mysqli_query($connection, $sqlorders) or die("Error in Selecting " . mysqli_error($connection));
 
-    //create an array
-    $emparray = array();
-    while($row = mysqli_fetch_assoc($result))
-    {
-        $emparray[] = $row;
-    }
-    $json = json_encode($emparray);
+while($row = mysqli_fetch_array($resultorders)){ 
 
-    //close the db connection
-    mysqli_close($connection);
+    $ProductId = $row['productID'];
+    $Date = $row['date'];
+ }
 
-    echo $json;
+
+$sqlproducts = "SELECT * FROM phones WHERE productId= ' ". $ProductId . " ' ";    
+$result = mysqli_query($connection, $sqlproducts) or die("Error in Selecting " . mysqli_error($connection));
+
+//create an array
+$emparray = array();
+while($row = mysqli_fetch_assoc($result))
+{
+    $row["date"] = $Date;
+    array_push($emparray, $row);
+    
+}
+
+
+
+$json = json_encode($emparray);
+
+
+
+//close the db connection
+mysqli_close($connection);
+
+echo $json;
 ?>

@@ -114,10 +114,10 @@ $_SESSION['pas_verify_error'] = "";
                     <div class="col-lg-2 col-md-6">
                         <h5 class="text-white mb-3">Quick links</h5>
                         <ul class="list-unstyled text-muted">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Mobile Phones</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">My Cart</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="phones.php">Mobile Phones</a></li>
+                            <li><a href="contact.php">Contact</a></li>
+                            <li><a href="orders.php">My Orders</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-4 col-md-6">
